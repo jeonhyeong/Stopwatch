@@ -1,1 +1,6 @@
+# Xcode
 *.xcuserdatad
+
+# Carthage
+Cartfile.resolved
+Carthage/

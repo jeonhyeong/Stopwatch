@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB0E96F1237296A6006BA5D8 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0E96F0237296A6006BA5D8 /* ReSwift.framework */; };
 		CB5074F92358A5E800B76846 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5074F82358A5E800B76846 /* AppDelegate.swift */; };
 		CB5074FB2358A5E800B76846 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5074FA2358A5E800B76846 /* SceneDelegate.swift */; };
 		CB5074FD2358A5E800B76846 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5074FC2358A5E800B76846 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB0E96F0237296A6006BA5D8 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
 		CB5074F52358A5E800B76846 /* Stopwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stopwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB5074F82358A5E800B76846 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB5074FA2358A5E800B76846 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +33,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB0E96F1237296A6006BA5D8 /* ReSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB0E96EF237296A6006BA5D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB0E96F0237296A6006BA5D8 /* ReSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CB5074EC2358A5E800B76846 = {
 			isa = PBXGroup;
 			children = (
 				CB5074F72358A5E800B76846 /* Stopwatch */,
 				CB5074F62358A5E800B76846 /* Products */,
+				CB0E96EF237296A6006BA5D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +89,7 @@
 				CB5074F12358A5E800B76846 /* Sources */,
 				CB5074F22358A5E800B76846 /* Frameworks */,
 				CB5074F32358A5E800B76846 /* Resources */,
+				CB0E96F22372B664006BA5D8 /* Carthage Run Script */,
 			);
 			buildRules = (
 			);
@@ -132,6 +145,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CB0E96F22372B664006BA5D8 /* Carthage Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ReSwift.framework",
+			);
+			name = "Carthage Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CB5074F12358A5E800B76846 /* Sources */ = {
@@ -286,6 +321,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R99NVG6NMN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Stopwatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -304,6 +343,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R99NVG6NMN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Stopwatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
