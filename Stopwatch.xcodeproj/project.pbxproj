@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CB0E96F1237296A6006BA5D8 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0E96F0237296A6006BA5D8 /* ReSwift.framework */; };
+		CB0E96F72372B794006BA5D8 /* StopwatchReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0E96F62372B794006BA5D8 /* StopwatchReducer.swift */; };
+		CB0E96F92372B7A2006BA5D8 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0E96F82372B7A2006BA5D8 /* AppState.swift */; };
+		CB0E96FB2372B7AD006BA5D8 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0E96FA2372B7AD006BA5D8 /* Actions.swift */; };
 		CB5074F92358A5E800B76846 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5074F82358A5E800B76846 /* AppDelegate.swift */; };
 		CB5074FB2358A5E800B76846 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5074FA2358A5E800B76846 /* SceneDelegate.swift */; };
 		CB5074FD2358A5E800B76846 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5074FC2358A5E800B76846 /* ViewController.swift */; };
@@ -18,6 +21,9 @@
 
 /* Begin PBXFileReference section */
 		CB0E96F0237296A6006BA5D8 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
+		CB0E96F62372B794006BA5D8 /* StopwatchReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchReducer.swift; sourceTree = "<group>"; };
+		CB0E96F82372B7A2006BA5D8 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		CB0E96FA2372B7AD006BA5D8 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		CB5074F52358A5E800B76846 /* Stopwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stopwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB5074F82358A5E800B76846 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB5074FA2358A5E800B76846 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +54,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CB0E96F32372B711006BA5D8 /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				CB0E96F62372B794006BA5D8 /* StopwatchReducer.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		CB0E96F42372B728006BA5D8 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				CB0E96F82372B7A2006BA5D8 /* AppState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		CB0E96F52372B732006BA5D8 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				CB0E96FA2372B7AD006BA5D8 /* Actions.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
 		CB5074EC2358A5E800B76846 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +98,9 @@
 		CB5074F72358A5E800B76846 /* Stopwatch */ = {
 			isa = PBXGroup;
 			children = (
+				CB0E96F32372B711006BA5D8 /* Reducers */,
+				CB0E96F42372B728006BA5D8 /* State */,
+				CB0E96F52372B732006BA5D8 /* Actions */,
 				CB5074F82358A5E800B76846 /* AppDelegate.swift */,
 				CB5074FA2358A5E800B76846 /* SceneDelegate.swift */,
 				CB5074FC2358A5E800B76846 /* ViewController.swift */,
@@ -173,7 +206,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB0E96F72372B794006BA5D8 /* StopwatchReducer.swift in Sources */,
+				CB0E96F92372B7A2006BA5D8 /* AppState.swift in Sources */,
 				CB5074FD2358A5E800B76846 /* ViewController.swift in Sources */,
+				CB0E96FB2372B7AD006BA5D8 /* Actions.swift in Sources */,
 				CB5074F92358A5E800B76846 /* AppDelegate.swift in Sources */,
 				CB5074FB2358A5E800B76846 /* SceneDelegate.swift in Sources */,
 			);

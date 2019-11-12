@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import ReSwift
+
+let mainStore = Store<AppState>(reducer: stopwatchReducer, state: nil)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

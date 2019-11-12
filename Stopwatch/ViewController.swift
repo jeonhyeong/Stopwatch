@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import ReSwift
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, StoreSubscriber {
+    func newState(state: AppState) {
+        updateTime(state.count)
+        updateEnableStateForResetButton(state.resetButtonEnableState)
+    }
+    
+    typealias StoreSubscriberStateType = AppState
+    
     @IBOutlet weak var textFieldMinute: UITextField!
     @IBOutlet weak var textFieldSecond: UITextField!
     @IBOutlet weak var buttonReset: UIButton!
@@ -19,15 +26,16 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // subscribe to state changes
+        mainStore.subscribe(self)
     }
     
     @objc func add() {
-        count+=1
-        updateTime()
+        mainStore.dispatch(StopwatchAddAction())
     }
     
-    func updateTime() {
+    func updateTime(_ count: Int) {
         var minute = String(count/60)
         var second = String(count - 60*Int(minute)!)
         
@@ -47,8 +55,9 @@ class ViewController: UIViewController {
             return
         }
         if buttonReset.isEnabled {
-            updateEnableStateForResetButton(false)
+            mainStore.dispatch(ResetButtonDisableAction())
         }
+        
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(add), userInfo: nil, repeats: true)
     }
     
@@ -57,23 +66,21 @@ class ViewController: UIViewController {
             return
         }
         timer.invalidate()
-        updateEnableStateForResetButton(true)
+        mainStore.dispatch(ResetButtonEnableAction())
     }
     
     @IBAction func resetButtonAction(_ sender: Any) {
-        count = 0
-        updateTime()
-        updateEnableStateForResetButton(false)
+        mainStore.dispatch(StopwatchResetAction())
+        mainStore.dispatch(ResetButtonDisableAction())
     }
     
     func updateEnableStateForResetButton(_ state: Bool) {
-        if state {
-            buttonReset.isEnabled = true
-            buttonReset.setTitleColor(.white, for: .normal)
+        if state == buttonReset.isEnabled {
             return
         }
-        buttonReset.isEnabled = false
-        buttonReset.setTitleColor(.lightGray, for: .normal)
+        
+        buttonReset.isEnabled = state
+        state ? buttonReset.setTitleColor(.white, for: .normal) : buttonReset.setTitleColor(.lightGray, for: .normal)
     }
 }
 
